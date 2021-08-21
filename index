@@ -1,0 +1,9 @@
+if(!empty($arrIds)){
+	$measureN = Local\Catalog\MeasureRatio::getList('PRODUCT_ID', ['id'=>$ids]);
+	$PriceN = Local\Catalog\Price::getList('ID', ['select'=>['PRODUCT_ID','CATALOG_GROUP_ID', 'EXTRA_ID', 'PRICE'], 'filter'=>['PRODUCT_ID'=>$ids], 'order'=>["ID"=>"ASC"]]);
+}
+
+if(!empty($arrIdsSKU)){
+	$measureSKUN = Local\Catalog\MeasureRatio::getList('PRODUCT_ID', ['id'=>$idsSKU]);
+	$PriceSKUN = Local\Catalog\Price::getList('ID', ['select'=>['PRODUCT_ID','CATALOG_GROUP_ID', 'EXTRA_ID', 'PRICE'], 'filter'=>['PRODUCT_ID'=>$idsSKU], 'order'=>["ID"=>"ASC"]]);
+}
